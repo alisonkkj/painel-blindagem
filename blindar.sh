@@ -21,6 +21,7 @@ echo -e "${amarelo}PAINEL DE BLINDAGEM DE GRUPOS${reset}"
 echo -e "${vermelho}              by alisonkkjj yt${reset}"
 echo
 
+# Entrada do link
 read -p "Cole o link do grupo aqui: " link_grupo
 
 # Função de barra de progresso estilo hacker
@@ -67,6 +68,8 @@ mostrar_mensagem() {
     done
 }
 
+# Iniciando a simulação
 echo -e "\n${verde}[+] Iniciando blindagem do grupo: ${branco}${link_grupo}${reset}\n"
 barra_progresso 10
 mostrar_mensagem
+echo -e "\n${amarelo}[+] Processo de blindagem concluído com sucesso!${reset}\n"
