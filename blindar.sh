@@ -21,8 +21,15 @@ echo -e "${amarelo}PAINEL DE BLINDAGEM DE GRUPOS${reset}"
 echo -e "${vermelho}              by alisonkkjj yt${reset}"
 echo
 
-# Entrada do link
-read -p "Cole o link do grupo aqui: " link_grupo
+# Entrada do link ou nome
+read -p "Cole o link do grupo ou digite o nome: " grupo
+
+# Se o usuário digitou apenas um nome, criar link simulado
+if [[ ! $grupo =~ ^https?:// ]]; then
+    link_grupo="https://chat.whatsapp.com/$(echo $grupo | tr ' ' '_' | tr '[:upper:]' '[:lower:]')"
+else
+    link_grupo="$grupo"
+fi
 
 # Função de barra de progresso estilo hacker
 barra_progresso() {
